@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- Global Variables --- */
+:root {
+    --primary-color: #0056b3;
+    --primary-hover: #004494;
+    --bg-color: #f0f2f5; /* සුදු ගතිය නැති කරන ලා අළු පසුබිම */
+    --card-bg: #ffffff;
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color); /* පසුබිම අළු පාටයි */
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+/* --- 1. Navbar (Dark & Premium) --- */
+.navbar {
+    background: #111827 !important; /* තද කළු/නිල් පාටක් */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    border-bottom: 2px solid var(--primary-color);
+}
+.navbar-brand {
+    font-size: 1.5rem !important;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+.nav-link {
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 16px !important;
+    color: #e5e7eb !important;
+    transition: all 0.3s ease;
+}
+.nav-link:hover {
+    color: #ffffff !important;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+}
+
+/* --- 2. Hero Section & Slider --- */
+#mainSlider {
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background-color: #000; /* සුදු පින්තූර දැම්මත් යටින් කළු පාට පෙනෙන්න */
+}
+.carousel-item {
+    height: 55vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 6s ease, opacity 1s ease-out !important; 
+    transform: scale(1);
+}
+.carousel-item.active {
+    transform: scale(1.05); 
+}
+/* අකුරු පැහැදිලිව පේන්න කළු සෙවනැල්ලක් (Overlay) */
+.carousel-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%) !important;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* --- 3. Search Bar --- */
+.carousel-content form input {
+    border-radius: 30px !important;
+    padding: 12px 20px !important;
+    font-size: 1rem;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+}
+.carousel-content form input:focus {
+    border-color: var(--primary-color) !important;
+    outline: none;
+}
+.carousel-content form button {
+    border-radius: 30px !important;
+    padding: 10px 30px !important;
+    background: var(--primary-color) !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+.carousel-content form button:hover {
+    background: var(--primary-hover) !important;
+    transform: translateY(-2px);
+}
+
+/* --- 4. Category Strip --- */
+.category-strip {
+    background: var(--card-bg) !important; /* කාඩ් එක සුදුයි */
+    padding: 15px 20px !important;
+    border-radius: 12px !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin-top: -30px !important; /* Slider එක උඩට ලස්සනට එන්න */
+    position: relative;
+    z-index: 20;
+}
+.category-strip .btn {
+    padding: 8px 20px !important;
+    font-size: 0.95rem;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 30px !important;
+    transition: all 0.3s ease;
+}
+.category-strip .btn-light {
+    background: #ffffff !important;
+    color: var(--text-dark) !important;
+}
+.category-strip .btn-light:hover {
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+.category-strip .btn-primary {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* --- 5. Product Cards (වෙනම පේන විදිහට) --- */
+.card {
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    background: var(--card-bg) !important; /* කාඩ් එක සුදුයි, පසුබිම අළුයි */
+    box-shadow: var(--shadow-sm) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-color: #cbd5e1 !important;
+}
+.card-img-top {
+    padding: 20px !important;
+    transition: transform 0.4s ease !important;
+}
+.card:hover .card-img-top {
+    transform: scale(1.08) !important;
+}
+.card-body h6 {
+    color: var(--text-dark) !important;
+    font-size: 1.05rem;
+}
+.card-body h5.text-danger {
+    color: var(--primary-color) !important; /* රතු වෙනුවට නිල් පාට ගාණට දුන්නා */
+    font-size: 1.2rem !important;
+}
+.card-body button[name="add_to_cart"] {
+    border-radius: 8px !important;
+    background: var(--primary-color) !important;
+    border: none !important;
+}
+.card-body button[name="add_to_cart"]:hover {
+    background: var(--primary-hover) !important;
+}
+
+/* --- 6. Live Info Banner & Bubbles --- */
+.live-info-bar {
+    background: #1f2937 !important;
+    border-top: 3px solid var(--primary-color) !important;
+}
+.scrolling-text {
+    display: inline-flex;
+    animation: scrollLeft 35s linear infinite;
+}
+.scrolling-text:hover {
+    animation-play-state: paused;
+}
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.bg-bubbles {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; 
+    overflow: hidden; pointer-events: none; margin: 0; padding: 0;
+}
+.bg-bubbles li {
+    position: absolute; list-style: none; display: block;
+    color: rgba(0, 0, 0, 0.03); /* අළු පසුබිමේ ලාවට පේන්න */
+    bottom: -150px;
+    animation: floatUp 25s infinite linear;
+}
+/* Bubble animations... (කලින් දුන්න ටිකමයි) */
+.bg-bubbles li:nth-child(1) { left: 10%; font-size: 80px; animation-duration: 15s; }
+.bg-bubbles li:nth-child(2) { left: 20%; font-size: 120px; animation-delay: 2s; animation-duration: 17s; }
+.bg-bubbles li:nth-child(3) { left: 25%; font-size: 60px; animation-delay: 4s; }
+.bg-bubbles li:nth-child(4) { left: 40%; font-size: 150px; animation-duration: 22s; }
+.bg-bubbles li:nth-child(5) { left: 70%; font-size: 90px; }
+.bg-bubbles li:nth-child(6) { left: 80%; font-size: 180px; animation-delay: 3s; }
+.bg-bubbles li:nth-child(7) { left: 32%; font-size: 200px; animation-delay: 7s; }
+.bg-bubbles li:nth-child(8) { left: 55%; font-size: 70px; animation-delay: 15s; animation-duration: 40s; }
+.bg-bubbles li:nth-child(9) { left: 25%; font-size: 50px; animation-delay: 2s; animation-duration: 40s; }
+.bg-bubbles li:nth-child(10) { left: 90%; font-size: 140px; animation-delay: 11s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-1200px) rotate(600deg); opacity: 0; }
+}
+/* --- Image Category Cards (Apple Style) --- */
+.category-img-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #f3f4f6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.category-img-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.06) !important;
+    border-color: #e5e7eb;
+}
+
+.category-img-card img {
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.category-img-card:hover img {
+    transform: scale(1.08); /* Hover කරද්දී පින්තූරෙ පොඩ්ඩක් ලොකු වෙනවා */
+}
+
+.category-img-card h6 {
+    color: #1f2937;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}

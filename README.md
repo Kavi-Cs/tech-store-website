@@ -22,7 +22,8 @@ This project is an e-commerce platform designed for a tech store. It allows user
 
 ## 📸 Screenshots
 
-*(Here are some previews of the website)*
+*([Here are some previews of the website](https://github.com/Kavi-Cs/tech-store-website/blob/image/WhatsApp%20Image%202026-04-16%20at%2022.54.11.jpeg)
+)*
 
 <p align="center">
   <img src="image_ca54a9.jpg" width="400" alt="Home Page Preview">
